@@ -37,6 +37,7 @@ test:
     - pytest -vvv --capture=tee-sys tests
   requires:
     - numpy
+    - orjson
     - pip
     - pytest
 
