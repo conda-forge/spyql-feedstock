@@ -1,5 +1,5 @@
 {% set name = "spyql" %}
-{% set version = "0.8.0" %}
+{% set version = "0.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/spyql-{{ version }}.tar.gz
-  sha256: d433056d126b7125f41304a9a11135c311d7f3391fe2d067483dd39152163c85
+  sha256: 0474b550ec760ba577a33620625767dc1c26a2bae8b4476664aae313e9f169a5
 
 build:
   entry_points:
