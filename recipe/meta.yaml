@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/spyql-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/spyql-{{ version }}.tar.gz
   sha256: cdfaa34efe05e30591f2017489e7f3447a0c92ef9b3ccca96b2feef8d707bbae
 
 build:
@@ -14,16 +14,17 @@ build:
     - spyql=spyql.cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
+    - setuptools
   run:
     - asciichartpy
     - click >=7.1.2
-    - python >=3.6
+    - python >={{ python_min }}
     - tabulate
 
 test:
@@ -40,6 +41,7 @@ test:
     - orjson
     - pip
     - pytest
+    - python {{ python_min }}
 
 about:
   home: https://github.com/dcmoura/spyql
